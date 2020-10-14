@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Python/3.8/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/gsaavedra/.oh-my-zsh"
@@ -100,3 +101,10 @@ source $ZSH/oh-my-zsh.sh
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias cl="clear"
 source /Users/gsaavedra/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+bindkey ';' autosuggest-accept
+bindkey -s jj '\e'
