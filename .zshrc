@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias cl="clear"
+alias gs="git status"
+alias sleep="pmset displaysleepnow"
 source /Users/gsaavedra/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"
@@ -109,3 +111,15 @@ export NVM_DIR="$HOME/.nvm"
 bindkey ';' autosuggest-accept
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+gitall() {
+    git add .
+    if [ "$1" != "" ] # or better, if [ -n "$1" ]
+    then
+        git commit -m "$1"
+    else
+        git commit -m update
+    fi
+    git push
+}
+
