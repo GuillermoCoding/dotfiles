@@ -1,9 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Python/3.8/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/gsaavedra/.oh-my-zsh"
+export ZSH="/Users/guillermosaavedradiaz/.oh-my-zsh"
+
+export AWS_SESSION_MFA="arn:aws:iam::916869144969:mfa/gsaavedradiaz"
+
+export AWS_SESSION_DURATION=28800 # 8 hours
+
+export AWS_SESSION_ROLE="TechDeveloper"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -40,7 +45,7 @@ ZSH_THEME="agnoster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -69,7 +74,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,28 +103,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+[[ -s /Users/guillermosaavedradiaz/.autojump/etc/profile.d/autojump.sh ]] && source /Users/guillermosaavedradiaz/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
+
 alias cl="clear"
 alias gs="git status"
-alias sleep="pmset displaysleepnow"
-source /Users/gsaavedra/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias gp="git pull"
+alias gl="git log"
+alias glog='git log --graph --oneline --decorate'
+source /Users/guillermosaavedradiaz/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey ';' autosuggest-accept
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-gitall() {
-    git add .
-    if [ "$1" != "" ] # or better, if [ -n "$1" ]
-    then
-        git commit -m "$1"
-    else
-        git commit -m update
-    fi
-    git push
-}
-
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
