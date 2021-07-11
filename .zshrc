@@ -120,7 +120,9 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
 SAVEHIST=1000
-setopt SHARE_HISTORY
+bindkey -e
+# End of lines configured by zsh-newuser-install
