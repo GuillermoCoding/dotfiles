@@ -4,11 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/guillermosaavedradiaz/.oh-my-zsh"
 
-export AWS_SESSION_MFA="arn:aws:iam::916869144969:mfa/gsaavedradiaz"
+export AWS_SESSION_MFA=""
 
 export AWS_SESSION_DURATION=28800 # 8 hours
 
-export AWS_SESSION_ROLE="TechDeveloper"
+export AWS_SESSION_ROLE=""
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
