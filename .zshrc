@@ -113,6 +113,7 @@ alias gs="git status"
 alias gp="git pull"
 alias gl="git log"
 alias glog='git log --graph --oneline --decorate'
+alias vim="nvim"
 source /Users/guillermosaavedradiaz/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey ';' autosuggest-accept
