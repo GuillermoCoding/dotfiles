@@ -12,6 +12,9 @@ call vundle#begin()
 
 " Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+let g:typescript_indent_disable = 1
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -52,5 +55,6 @@ filetype plugin indent on    " required
 :set tabstop=2
 :set expandtab
 :set autoindent
+:set re=0
 
 :syntax on
