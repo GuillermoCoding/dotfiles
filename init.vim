@@ -4,6 +4,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 

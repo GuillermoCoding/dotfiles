@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/guillermosaavedradiaz/.oh-my-zsh"
+export ZSH="/Users/guillermo/.oh-my-zsh"
 
 export AWS_SESSION_MFA=""
 
@@ -14,7 +14,7 @@ export AWS_SESSION_ROLE=""
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,7 +74,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump)
+plugins=(git zsh-autosuggestions autojump zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,12 +114,13 @@ alias gp="git pull"
 alias gl="git log"
 alias glog='git log --graph --oneline --decorate'
 alias vim="nvim"
-source /Users/guillermosaavedradiaz/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /Users/guillermo/Documents/Github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/guillermo/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 bindkey ';' autosuggest-accept
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 eval "$(nodenv init -)"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
+#export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -127,3 +128,11 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# bun completions
+[ -s "/Users/guillermo/.bun/_bun" ] && source "/Users/guillermo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
